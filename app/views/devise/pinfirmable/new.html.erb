@@ -1,7 +1,7 @@
-<%= form_tag("/users/pinfirmable", method: "post") do %>
-  <%= text_field_tag("digits[]", "", id: "digits_1") %>
-  <%= text_field_tag("digits[]", "", id: "digits_2") %>
-  <%= text_field_tag("digits[]", "", id: "digits_3") %>
-  <%= text_field_tag("digits[]", "", id: "digits_4") %>
+<%= form_tag("/users/pinfirmable", method: "post", id: "pinfirmable_form") do %>
+  <%= text_field_tag("digits[]", "", id: "digits_1", class: "pin-input") %>
+  <%= text_field_tag("digits[]", "", id: "digits_2", class: "pin-input") %>
+  <%= text_field_tag("digits[]", "", id: "digits_3", class: "pin-input") %>
+  <%= text_field_tag("digits[]", "", id: "digits_4", class: "pin-input") %>
   <%= submit_tag("GO!") %>
 <% end %>
