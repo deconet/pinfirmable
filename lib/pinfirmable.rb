@@ -9,3 +9,4 @@ Devise.add_module :pinfirmable,
                   route: :pinfirmable
 
 require "pinfirmable/routes"
+require "pinfirmable/hooks/pinfirmable"
