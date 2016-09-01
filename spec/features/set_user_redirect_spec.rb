@@ -29,6 +29,12 @@ RSpec.feature "User signup" do
     expect(page.current_path).to eq "/users/pinfirmable/new"
   end
 
+  scenario "sends an email with the pin" do
+    pin_email = ActionMailer::Base.deliveries.last
+    user = User.find_by email: "test@example.com"
+    expect(pin_email.subject).to eq("Confirmation code: #{user.pinfirmable_pin}")
+  end
+
   def sign_up_user
     visit new_user_registration_path
     fill_in "user_email", with: "test@example.com"
