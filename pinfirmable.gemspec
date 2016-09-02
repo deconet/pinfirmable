@@ -10,9 +10,9 @@ Gem::Specification.new do |s|
   s.version     = Pinfirmable::VERSION
   s.authors     = ["Greg Woodcock"]
   s.email       = ["greg@yoomee.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Pinfirmable."
-  s.description = "TODO: Description of Pinfirmable."
+  s.homepage    = ""
+  s.summary     = "Summary of Pinfirmable."
+  s.description = "Description of Pinfirmable."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
