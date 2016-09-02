@@ -3,15 +3,15 @@
   <p><%= simple_format t("pinfirmable.confirm.body") %></p>
   <%= form_tag("/users/pinfirmable", method: "post", id: "pinfirmable-form") do %>
     <div id="pinfirmable-pin-inputs">
-      <%= text_field_tag "digits[]", "", id: "digits_1", class: "pin-input", onKeyUp: "return pinfirmable.autoTab(event)", onFocus: "return this.select()", autofocus: true %>
-      <%= text_field_tag "digits[]", "", id: "digits_2", class: "pin-input", onKeyUp: "return pinfirmable.autoTab(event)", onFocus: "return this.select()" %>
-      <%= text_field_tag "digits[]", "", id: "digits_3", class: "pin-input", onKeyUp: "return pinfirmable.autoTab(event)", onFocus: "return this.select()" %>
+      <%= text_field_tag "digits[]", "", id: "digits_1", class: "pin-input", maxlength: "1", onKeyDown: "return pinfirmable.autoTab(event)", onFocus: "return this.select()", autocomplete: "off", autofocus: true %>
+      <%= text_field_tag "digits[]", "", id: "digits_2", class: "pin-input", maxlength: "1", onKeyDown: "return pinfirmable.autoTab(event)", onFocus: "return this.select()", autocomplete: "off" %>
+      <%= text_field_tag "digits[]", "", id: "digits_3", class: "pin-input", maxlength: "1", onKeyDown: "return pinfirmable.autoTab(event)", onFocus: "return this.select()", autocomplete: "off" %>
       <span class="pin-separator">&nbsp;</span>
-        <%= text_field_tag "digits[]", "", id: "digits_4", class: "pin-input", onKeyUp: "return pinfirmable.autoTab(event)", onFocus: "return this.select()" %>
-        <%= text_field_tag "digits[]", "", id: "digits_5", class: "pin-input", onKeyUp: "return pinfirmable.autoTab(event)", onFocus: "return this.select()" %>
-        <%= text_field_tag "digits[]", "", id: "digits_6", class: "pin-input", onKeyUp: "return pinfirmable.autoTab(event)", onFocus: "return this.select()" %>
+        <%= text_field_tag "digits[]", "", id: "digits_4", class: "pin-input", maxlength: "1", onKeyDown: "return pinfirmable.autoTab(event)", onFocus: "return this.select()", autocomplete: "off" %>
+        <%= text_field_tag "digits[]", "", id: "digits_5", class: "pin-input", maxlength: "1", onKeyDown: "return pinfirmable.autoTab(event)", onFocus: "return this.select()", autocomplete: "off" %>
+        <%= text_field_tag "digits[]", "", id: "digits_6", class: "pin-input", maxlength: "1", onKeyDown: "return pinfirmable.autoTab(event)", onFocus: "return this.select()", autocomplete: "off" %>
     </div>
-    <%= submit_tag("GO!") %>
+    <%= submit_tag("GO!", id: "pinfirmable-noscript") %>
   <% end %>
   <% if @locked_out %>
     <div class="pinfirmable-alert"> You're trying too many times, please try again in a minute. </div>
