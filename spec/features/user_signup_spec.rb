@@ -7,7 +7,7 @@ RSpec.feature "User signup" do
 
   scenario "redirects users to the pin confirmation page after signup" do
     expect(User.find_by(email: "test@example.com").pinfirmable_pin).to_not be_nil
-    expect(page.current_path).to eq "/users/pinfirmable/new"
+    expect(page.current_path).to eq "/users/confirmemail"
   end
 
   scenario "filling in a correct pin redirects to the root path" do
@@ -24,7 +24,7 @@ RSpec.feature "User signup" do
 
   scenario "filling in an incorrect pin redirects to the pin path" do
     fill_in_pin("123456")
-    expect(page.current_path).to eq "/users/pinfirmable/new"
+    expect(page.current_path).to eq "/users/confirmemail"
   end
 
   scenario "sends an email with the pin" do

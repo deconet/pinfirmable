@@ -24,7 +24,7 @@ module Devise
           pinfirmable_lockout: lockout
         )
         @locked_out = locked_out?
-        redirect_to new_user_pinfirmable_path
+        redirect_to user_confirmemail_path
       end
       request.env["CHECKING_PINFIRMABLE_PIN"] = false
     end

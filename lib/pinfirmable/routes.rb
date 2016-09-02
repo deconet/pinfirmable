@@ -5,9 +5,11 @@ module ActionDispatch
 
       def devise_pinfirmable(mapping, controllers)
         resource :pinfirmable,
-                 only: [:new, :create],
+                 only: [:create],
                  path: mapping.path_names[:pinfirmable],
                  controller: controllers[:pinfirmable]
+
+        get :confirmemail, to: :new, controller: controllers[:pinfirmable], action: :new
       end
     end
   end

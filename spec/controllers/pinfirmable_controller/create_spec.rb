@@ -21,7 +21,7 @@ RSpec.describe Devise::PinfirmableController do
 
       it "returns success" do
         post :create, params: { digits: pin }
-        expect(response).to redirect_to("/users/pinfirmable/new")
+        expect(response).to redirect_to("/users/confirmemail")
       end
 
       it "increments the tries" do
