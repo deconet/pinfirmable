@@ -24,9 +24,15 @@ rake db:migrate
 # If your devise model isn't called user
 rake db:migrate MODEL=admin
 ```
+Add the javascript include to the asset pipeline.
+```
+//= require refile
+```
 
 ## Todo
  - Encrypt the pin in the DB
+ - Rate limit / n tries
+ - Resend email
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).

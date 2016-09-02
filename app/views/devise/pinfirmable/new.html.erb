@@ -1,7 +1,9 @@
 <%= form_tag("/users/pinfirmable", method: "post", id: "pinfirmable_form") do %>
-  <%= text_field_tag("digits[]", "", id: "digits_1", class: "pin-input") %>
-  <%= text_field_tag("digits[]", "", id: "digits_2", class: "pin-input") %>
-  <%= text_field_tag("digits[]", "", id: "digits_3", class: "pin-input") %>
-  <%= text_field_tag("digits[]", "", id: "digits_4", class: "pin-input") %>
+  <div id="pinfirmable-pin-inputs">
+    <%= text_field_tag "digits[]", "", id: "digits_1", class: "pin-input", onKeyPress: "return pinfirmable.autoTab(event)", onFocus: "return this.select()" %>
+    <%= text_field_tag "digits[]", "", id: "digits_2", class: "pin-input", onKeyPress: "return pinfirmable.autoTab(event)", onFocus: "return this.select()" %>
+    <%= text_field_tag "digits[]", "", id: "digits_3", class: "pin-input", onKeyPress: "return pinfirmable.autoTab(event)", onFocus: "return this.select()" %>
+    <%= text_field_tag "digits[]", "", id: "digits_4", class: "pin-input", onKeyPress: "return pinfirmable.autoTab(event)", onFocus: "return this.select()" %>
+  </div>
   <%= submit_tag("GO!") %>
 <% end %>
