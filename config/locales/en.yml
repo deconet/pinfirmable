@@ -1,7 +1,9 @@
 en:
-  pinfirmable:
-    confirm:
-      title: "Thanks. We've sent you an email"
-      body: |
-        The email we have sent you contains a 6 digit code. Please enter your code below.
-        We do this to make sure that we are creating your account with the correct email address and to stop any account being created in error.
+  pinfirmable_mailer:
+    pin_email:
+      subject: "Confirmation code: %{code_part1}-%{code_part2}"
+  confirm:
+    title: "Thanks. We've sent you an email"
+    body: |
+      The email we have sent you contains a 6 digit code. Please enter your code below.
+      We do this to make sure that we are creating your account with the correct email address and to stop any account being created in error.

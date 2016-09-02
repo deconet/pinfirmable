@@ -1,6 +1,6 @@
 <div class="pinfirmable-panel">
-  <h1><%= t("pinfirmable.confirm.title") %></h1>
-  <p><%= simple_format t("pinfirmable.confirm.body") %></p>
+  <h1><%= t("confirm.title") %></h1>
+  <p><%= simple_format t("confirm.body") %></p>
   <%= form_tag("/users/pinfirmable", method: "post", id: "pinfirmable-form") do %>
     <div id="pinfirmable-pin-inputs">
       <%= text_field_tag "digits[]", "", id: "digits_1", class: "pin-input", maxlength: "1", onKeyDown: "return pinfirmable.autoTab(event)", onFocus: "return this.select()", autocomplete: "off", autofocus: true %>
