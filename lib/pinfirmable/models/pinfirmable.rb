@@ -11,7 +11,7 @@ module Devise
 
       def generate_confirmation_token
         pin = ""
-        4.times { pin << SecureRandom.random_number(9).to_s }
+        6.times { pin << SecureRandom.random_number(9).to_s }
         self.pinfirmable_pin = pin
       end
 

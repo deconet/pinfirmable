@@ -16,6 +16,8 @@ RSpec.feature "User signup" do
     fill_in "digits_2", with: user.pinfirmable_pin[1]
     fill_in "digits_3", with: user.pinfirmable_pin[2]
     fill_in "digits_4", with: user.pinfirmable_pin[3]
+    fill_in "digits_5", with: user.pinfirmable_pin[4]
+    fill_in "digits_6", with: user.pinfirmable_pin[5]
     click_button "GO!"
     expect(page.current_path).to eq "/"
   end
@@ -32,7 +34,7 @@ RSpec.feature "User signup" do
   scenario "sends an email with the pin" do
     pin_email = ActionMailer::Base.deliveries.last
     user = User.find_by email: "test@example.com"
-    expect(pin_email.subject).to eq("Confirmation code: #{user.pinfirmable_pin}")
+    expect(pin_email.subject).to eq("Confirmation code: #{user.pinfirmable_pin[0..2]}-#{user.pinfirmable_pin[3..6]}")
   end
 
   def sign_up_user
