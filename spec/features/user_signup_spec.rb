@@ -23,11 +23,7 @@ RSpec.feature "User signup" do
   end
 
   scenario "filling in an incorrect pin redirects to the pin path" do
-    fill_in "digits_1", with: "1"
-    fill_in "digits_2", with: "2"
-    fill_in "digits_3", with: "3"
-    fill_in "digits_4", with: "4"
-    click_button "GO!"
+    fill_in_pin("123456")
     expect(page.current_path).to eq "/users/pinfirmable/new"
   end
 
@@ -35,6 +31,18 @@ RSpec.feature "User signup" do
     pin_email = ActionMailer::Base.deliveries.last
     user = User.find_by email: "test@example.com"
     expect(pin_email.subject).to eq("Confirmation code: #{user.pinfirmable_pin[0..2]}-#{user.pinfirmable_pin[3..6]}")
+  end
+
+  scenario "lockout message is displayed after 3 attempts" do
+    4.times { fill_in_pin("123456") }
+    expect(page).to have_content("You're trying too many times, please try again in a minute.")
+  end
+
+  def fill_in_pin(pin)
+    pin.split("").each_with_index do |i, v|
+      fill_in "digits_#{i}", with: v
+    end
+    click_button "GO!"
   end
 
   def sign_up_user

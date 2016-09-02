@@ -31,7 +31,6 @@ Add the javascript include to the asset pipeline.
 
 ## Todo
  - Encrypt the pin in the DB
- - Rate limit / n tries
  - Resend email
 
 ## License
