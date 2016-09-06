@@ -29,6 +29,12 @@ module Devise
       request.env["CHECKING_PINFIRMABLE_PIN"] = false
     end
 
+    def resend_email
+      flash[:notice] = "We have just resent your code"
+      PinfirmableMailer.pin_email(pinfirmable_user).deliver
+      redirect_to user_confirmemail_path
+    end
+
     protected
 
     def pinfirmable_user

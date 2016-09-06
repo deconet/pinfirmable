@@ -14,9 +14,12 @@
     <%= submit_tag("GO!", id: "pinfirmable-noscript") %>
   <% end %>
   <% if @locked_out %>
-    <div class="pinfirmable-alert"> You're trying too many times, please try again in a minute. </div>
+    <div class="pinfirmable-alert">
+      <%= t("confirm.rate_limit") %>
+    </div>
   <% end %>
 
-  <%= form_tag("/users/pinfirmable/resend-email", method: "post", id: "pinfirmable-form") do %>
+  <%= form_tag("/users/pinfirmable/resend_email", method: "post", id: "pinfirmable-resend-form") do %>
+    <%= submit_tag(t("confirm.no_email")) %>
   <% end %>
 </div>

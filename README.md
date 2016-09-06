@@ -26,12 +26,11 @@ rake db:migrate MODEL=admin
 ```
 Add the javascript include to the asset pipeline.
 ```
-//= require refile
+//= require pinfirmable
 ```
 
 ## Todo
  - Encrypt the pin in the DB
- - Resend email
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
