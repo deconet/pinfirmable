@@ -20,7 +20,6 @@ module Devise
           pinfirmable_tries: tries,
           pinfirmable_lockout: lockout
         )
-        @locked_out = locked_out?
         redirect_to user_confirmemail_path
       end
     end
