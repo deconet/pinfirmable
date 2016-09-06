@@ -24,11 +24,7 @@ var pinfirmable = {
 
   handleDigitPress: function(event) {
     var elem = event.srcElement;
-    if (elem.value.length === 1) {
-      elem.value = event.key;
-    } else {
-      elem.value = event.key;
-    }
+    elem.value = event.key;
 
     var nextElem = this.nextElement(elem);
     if(nextElem.type == "text" || nextElem.type == "number") {
