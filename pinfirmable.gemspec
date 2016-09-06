@@ -10,9 +10,9 @@ Gem::Specification.new do |s|
   s.version     = Pinfirmable::VERSION
   s.authors     = ["Greg Woodcock"]
   s.email       = ["greg@yoomee.com"]
-  s.homepage    = ""
-  s.summary     = "Summary of Pinfirmable."
-  s.description = "Description of Pinfirmable."
+  s.homepage    = "https://github.com/Yoomee/pinfirmable"
+  s.summary     = "Drop in replacement for devise confirmable"
+  s.description = "Replace devise confirmable with a pin emailed to users which they enter after signup"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
