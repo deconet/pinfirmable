@@ -1,13 +1,10 @@
 module Devise
   class PinfirmableController < DeviseController
     def new
-      request.env["CHECKING_PINFIRMABLE_PIN"] = true
       @locked_out = locked_out?
-      request.env["CHECKING_PINFIRMABLE_PIN"] = false
     end
 
     def create
-      request.env["CHECKING_PINFIRMABLE_PIN"] = true
       if locked_out?
         @locked_out = true
         render(:new, status: 429) && return
@@ -26,7 +23,6 @@ module Devise
         @locked_out = locked_out?
         redirect_to user_confirmemail_path
       end
-      request.env["CHECKING_PINFIRMABLE_PIN"] = false
     end
 
     def resend_email
