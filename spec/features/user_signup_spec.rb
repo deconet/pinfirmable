@@ -31,6 +31,7 @@ RSpec.feature "User signup" do
     pin_email = ActionMailer::Base.deliveries.last
     user = User.find_by email: "test@example.com"
     expect(pin_email.subject).to eq("Confirmation code: #{user.pinfirmable_pin[0..2]}-#{user.pinfirmable_pin[3..6]}")
+    expect(pin_email.body).to have_content("#{user.pinfirmable_pin[0..2]}-#{user.pinfirmable_pin[3..6]}")
   end
 
   scenario "lockout message is displayed after 3 attempts" do

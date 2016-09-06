@@ -2,6 +2,7 @@ en:
   pinfirmable_mailer:
     pin_email:
       subject: "Confirmation code: %{code_part1}-%{code_part2}"
+      code: "%{code_part1}-%{code_part2}"
   confirm:
     title: "Thanks. We've sent you an email"
     body: |
