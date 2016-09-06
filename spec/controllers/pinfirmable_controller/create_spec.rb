@@ -7,6 +7,11 @@ RSpec.describe Devise::PinfirmableController do
       @request.env["devise.mapping"] = Devise.mappings[:user]
       @user = User.create(email: "test@example.com", password: "password")
       sign_in @user
+      Timecop.freeze(Time.local(1990))
+    end
+
+    after do
+      Timecop.return
     end
 
     context "correct pin" do
