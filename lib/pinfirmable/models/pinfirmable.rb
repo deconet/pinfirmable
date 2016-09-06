@@ -7,6 +7,10 @@ module Devise
         after_commit :send_confirmation_instructions, on: :create
       end
 
+      def confirm
+        update_attribute(:pinfirmable_pin, nil)
+      end
+
       protected
 
       def generate_confirmation_token

@@ -11,7 +11,7 @@ module Devise
       end
 
       if Pinfirmable::Pin.new(params[:digits]).matches_user_pin(pinfirmable_user)
-        pinfirmable_user.update_attribute(:pinfirmable_pin, nil)
+        pinfirmable_user.confirm
         redirect_to after_confirmation_path_for(resource_name, pinfirmable_user)
       else
         tries = pinfirmable_user.pinfirmable_tries += 1
