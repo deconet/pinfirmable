@@ -7,7 +7,6 @@ var pinfirmable = {
   },
 
   autoTab: function(event) {
-    // event.preventDefault();
     switch (this.detectKeyPress(event)) {
     case "digit":
       this.handleDigitPress(event);
