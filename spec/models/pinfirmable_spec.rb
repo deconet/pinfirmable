@@ -13,7 +13,7 @@ describe Pinfirmable do
     u.save
   end
 
-  it "doesn't call emailer if skip_pinfirm! is called" do
+  it "doesn't call emailer if skip_pinfirmation! is called" do
     expect(PinfirmableMailer).
       not_to receive(:pin_email).with(an_instance_of(User))
     u = User.new(
