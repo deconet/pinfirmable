@@ -4,8 +4,7 @@ module Devise
       extend ActiveSupport::Concern
 
       included do
-        @skip_pinfirmation = false
-        before_create :generate_confirmation_token
+        before_create :generate_confirmation_token, unless: "skip_pinfirmation?"
         after_commit :send_confirmation_instructions, on: :create
       end
 
@@ -27,6 +26,12 @@ module Devise
 
       def send_confirmation_instructions
         PinfirmableMailer.pin_email(self).deliver unless @skip_pinfirmation
+      end
+
+      private
+
+      def skip_pinfirmation?
+        !!@skip_pinfirmation
       end
     end
   end
