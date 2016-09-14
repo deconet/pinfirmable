@@ -23,7 +23,7 @@ var pinfirmable = {
   },
 
   handleDigitPress: function(event) {
-    var elem = event.srcElement;
+    var elem = event.currentTarget;
     elem.value = event.key;
 
     var nextElem = this.nextElement(elem);
@@ -37,7 +37,7 @@ var pinfirmable = {
   },
 
   handleBackspacePress: function(event) {
-    var elem = event.srcElement;
+    var elem = event.currentTarget;
     if(elem.value.length > 0) {
       elem.value = "";
     } else {
