@@ -31,6 +31,9 @@ var pinfirmable = {
       nextElem.focus();
     }
     else {
+      var loadingGif = document.getElementById("pinfirmable-loading-gif");
+      loadingGif.style.display = "inline-block";
+      elem.form.style.display = "none";
       elem.form.submit();
     }
     return true;
