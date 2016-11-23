@@ -3,13 +3,13 @@
   <p><%= simple_format t("confirm.body") %></p>
   <%= form_tag("/users/pinfirmable", method: "post", id: "pinfirmable-form") do %>
     <div id="pinfirmable-pin-inputs">
-      <%= text_field_tag "digits[]", "", id: "digits_1", class: "pin-input", maxlength: "1", onKeyDown: "return pinfirmable.autoTab(event)", onFocus: "return this.select()", autocomplete: "off", autofocus: true %>
-      <%= text_field_tag "digits[]", "", id: "digits_2", class: "pin-input", maxlength: "1", onKeyDown: "return pinfirmable.autoTab(event)", onFocus: "return this.select()", autocomplete: "off" %>
-      <%= text_field_tag "digits[]", "", id: "digits_3", class: "pin-input", maxlength: "1", onKeyDown: "return pinfirmable.autoTab(event)", onFocus: "return this.select()", autocomplete: "off" %>
+      <%= text_field_tag "digits[]", "", id: "digits_1", type: "tel", class: "pin-input", maxlength: "1", onKeyPress: "return pinfirmable.autoTab(event)", onKeyDown: "return pinfirmable.handleBackspacePress(event)", onFocus: "return this.select()", autocomplete: "off", onPaste: "return pinfirmable.pastePin(event)", autofocus: true %>
+      <%= text_field_tag "digits[]", "", id: "digits_2", type: "tel", class: "pin-input", maxlength: "1", onKeyPress: "return pinfirmable.autoTab(event)", onKeyDown: "return pinfirmable.handleBackspacePress(event)", onFocus: "return this.select()", autocomplete: "off", onPaste: "return pinfirmable.pastePin(event)" %>
+      <%= text_field_tag "digits[]", "", id: "digits_3", type: "tel", class: "pin-input", maxlength: "1", onKeyPress: "return pinfirmable.autoTab(event)", onKeyDown: "return pinfirmable.handleBackspacePress(event)", onFocus: "return this.select()", autocomplete: "off", onPaste: "return pinfirmable.pastePin(event)" %>
       <span class="pin-separator">&nbsp;</span>
-        <%= text_field_tag "digits[]", "", id: "digits_4", class: "pin-input", maxlength: "1", onKeyDown: "return pinfirmable.autoTab(event)", onFocus: "return this.select()", autocomplete: "off" %>
-        <%= text_field_tag "digits[]", "", id: "digits_5", class: "pin-input", maxlength: "1", onKeyDown: "return pinfirmable.autoTab(event)", onFocus: "return this.select()", autocomplete: "off" %>
-        <%= text_field_tag "digits[]", "", id: "digits_6", class: "pin-input", maxlength: "1", onKeyDown: "return pinfirmable.autoTab(event)", onFocus: "return this.select()", autocomplete: "off" %>
+        <%= text_field_tag "digits[]", "", id: "digits_4", type: "tel", class: "pin-input", maxlength: "1", onKeyPress: "return pinfirmable.autoTab(event)", onKeyDown: "return pinfirmable.handleBackspacePress(event)", onFocus: "return this.select()", autocomplete: "off", onPaste: "return pinfirmable.pastePin(event)" %>
+        <%= text_field_tag "digits[]", "", id: "digits_5", type: "tel", class: "pin-input", maxlength: "1", onKeyPress: "return pinfirmable.autoTab(event)", onKeyDown: "return pinfirmable.handleBackspacePress(event)", onFocus: "return this.select()", autocomplete: "off", onPaste: "return pinfirmable.pastePin(event)" %>
+        <%= text_field_tag "digits[]", "", id: "digits_6", type: "tel", class: "pin-input", maxlength: "1", onKeyPress: "return pinfirmable.autoTab(event)", onKeyDown: "return pinfirmable.handleBackspacePress(event)", onFocus: "return this.select()", autocomplete: "off", onPaste: "return pinfirmable.pastePin(event)" %>
     </div>
     <%= submit_tag("GO!", id: "pinfirmable-noscript") %>
   <% end %>
