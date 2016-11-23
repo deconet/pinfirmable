@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pinfirmable (0.1.2)
+    pinfirmable (0.1.3)
       devise (~> 4.0)
       rails (~> 5.0.0, >= 5.0.0.1)
 
@@ -46,7 +46,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     addressable (2.4.0)
-    arel (7.1.1)
+    arel (7.1.4)
     bcrypt (3.1.11)
     builder (3.2.2)
     capybara (2.8.1)
@@ -133,7 +133,7 @@ GEM
     sprockets (3.7.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (3.1.1)
+    sprockets-rails (3.2.0)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
@@ -162,4 +162,4 @@ DEPENDENCIES
   timecop
 
 BUNDLED WITH
-   1.13.0.rc.2
+   1.13.6
