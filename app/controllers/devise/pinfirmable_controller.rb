@@ -1,5 +1,7 @@
 module Devise
   class PinfirmableController < DeviseController
+    include ActionView::Helpers::UrlHelper
+
     def new
       @locked_out = locked_out?
     end
@@ -25,7 +27,9 @@ module Devise
     end
 
     def resend_email
-      flash[:notice] = "We have just resent your code"
+      flash[:notice] = t("pinfirmable.resend_email.notice_html",
+                         email: pinfirmable_user.email,
+                         not_correct_link: link_to(t("pinfirmable.resend_email.incorrect_email"), destroy_session_path(resource_name), method: :delete))
       PinfirmableMailer.pin_email(pinfirmable_user).deliver
       redirect_to user_confirmemail_path
     end
