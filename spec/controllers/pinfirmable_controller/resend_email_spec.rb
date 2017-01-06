@@ -15,7 +15,9 @@ RSpec.describe Devise::PinfirmableController do
 
     it "sets the flash" do
       post :resend_email
-      expect(flash[:notice]).to eq("We have just resent your code")
+      expect(flash[:notice]).to eq(I18n.t("pinfirmable.resend_email.notice_html",
+                                          email: "test@example.com",
+                                          not_correct_link: "<a rel=\"nofollow\" data-method=\"delete\" href=\"/users/sign_out\">Not the right email?</a>"))
     end
   end
 end
