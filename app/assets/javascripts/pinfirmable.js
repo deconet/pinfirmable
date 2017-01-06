@@ -10,6 +10,7 @@ var pinfirmable = {
     event.preventDefault();
     var clipboardData = event.clipboardData || window.clipboardData;
     var pastedData = clipboardData.getData('Text');
+    pastedData = pastedData.replace("-", "");
     var elemIndex = this.indexOfElement(event.currentTarget);
     var elements = event.currentTarget.form.getElementsByClassName("pin-input");
     var pasteCounter = 0;
@@ -17,6 +18,9 @@ var pinfirmable = {
       elements[i].value = pastedData[pasteCounter];
       elements[i].focus();
       pasteCounter++;
+    }
+    if(pasteCounter === 6) {
+      event.currentTarget.form.submit();
     }
   },
 
