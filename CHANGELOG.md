@@ -1,3 +1,7 @@
+### 0.1.4 - 2016-12-06
+
+* [Bug fix] Remove hyphen when pasting a copied pin
+
 ### 0.1.3 - 2016-11-23
 
 * [Bug fix] Fix cross browser bugs caused by keypress differences
