@@ -1,4 +1,4 @@
-### 0.1.4 - 2016-12-06
+### 0.1.5 - 2016-12-06
 
 * [Bug fix] Remove hyphen when pasting a copied pin
 

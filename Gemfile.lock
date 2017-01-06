@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pinfirmable (0.1.4)
+    pinfirmable (0.1.5)
       devise (~> 4.0)
       rails (~> 5.0.0, >= 5.0.0.1)
 
