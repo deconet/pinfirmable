@@ -3,7 +3,7 @@ PATH
   specs:
     pinfirmable (0.1.5)
       devise (~> 4.0)
-      rails (>= 5.1.4)
+      rails (>= 5.0.6, < 5.2)
 
 GEM
   remote: https://rubygems.org/
