@@ -4,7 +4,7 @@ module Devise
       extend ActiveSupport::Concern
 
       included do
-        before_create :generate_confirmation_token, unless: "skip_pinfirmation?"
+        before_create :generate_confirmation_token, unless: :skip_pinfirmation?
         after_commit :send_confirmation_instructions, on: :create
       end
 

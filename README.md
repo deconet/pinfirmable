@@ -40,6 +40,16 @@ To skip the pinfirmable email when creating a user (e.g. when seeding a database
  user.save
  ```
 
+## Development set up
+
+Check out the project and then run
+```bash
+rake db:setup
+```
+To create and migrate a development and test database.
+
+Run ```rspec``` to run the tests.
+
 ## Todo
  - Encrypt the pin in the DB
 
